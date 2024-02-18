@@ -6,7 +6,7 @@ import {
   CardFooter,
   Link,
   Image,
-
+  Input,
   
 } from "@nextui-org/react";
 export function UserSearch() {
@@ -19,6 +19,7 @@ export function UserSearch() {
       setUser([]);
     }
   };
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -40,17 +41,20 @@ export function UserSearch() {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-      <h1 className="title text-purple-600" >Github User Search.</h1>
+      <form onSubmit={handleSubmit} className="flex justify-center items-center mt-12 w-screen flex-col gap-2.5 "> 
+      <h1 className="title font-bold text-5xl max-[600px]:text-3xl mb-2" >Connect On Code.</h1>
 
-        <input
-          placeholder="Search user..."
+        <Input
+        size="sm"
+          placeholder="Search Github User..."
           type="text"
+          variant="bordered"
           onChange={handleChange}
-          className="searchBar"
+    
+          className="searchBar focus:outline-none focus:ring focus:ring-violet-300 max-[600px]:w-5/6"
         />
       </form>
-      <div className="container flex flex-wrap justify-center items-center w-screen">
+      <div className="container flex flex-wrap justify-center items-center w-screen m-auto w-screen">
         {users.map((user) => {
           return (
             <Card className="py-4 card">
@@ -78,27 +82,4 @@ export function UserSearch() {
       </div>
     </>
   );
-}
-
-{
-  /* <Card bg="dark" className="card" key={user.id}>
-<Card.Body>
-  <div className="content">
-    <Card.Link className="link" href={user.html_url}>
-      {user.login}
-    </Card.Link>
-    <Card.Text style={{ width: "80%" }}>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Donec id tempus elit, vitae sollicitudin dui. Etiam ut magna
-      sed nibh tincidunt bibendum et sed odio. Praesent vitae erat
-      tellus.
-    </Card.Text>
-  </div>
-  <Card.Img
-    className="card-img"
-    variant="left"
-    src={user.avatar_url}
-  />
-</Card.Body>
-</Card> */
 }

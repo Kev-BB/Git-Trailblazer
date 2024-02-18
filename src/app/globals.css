@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -16,6 +18,11 @@
   }
 }
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -30,4 +37,47 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+form {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.gtb{
+  font-family: "Pacifico", cursive;
+
+}
+
+.title {
+  font-weight: 700;
+  font-style: normal;
+  font-size: 50px;
+}
+
+.searchBar {
+  width: 500px;
+  height: 35px;
+  border-radius: 5px;
+  border-style: none;
+  color: #fafbfc;
+  padding-left: 10px;
+}
+
+.searchBar:focus {
+  outline: 2px solid #9353D3 !important;
+}
+
+.container {
+  width: 100vw;
+  margin: 0 auto;
+}
+
+.card {
+  margin: 30px 20px 20px 20px;
 }
